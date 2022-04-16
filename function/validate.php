@@ -5,8 +5,9 @@ function checkempty($value)
     if (empty($value)) {
 
         return false;
+    } else {
+        return true;
     }
-    return true;
 }
 function validateemail($email)
 {

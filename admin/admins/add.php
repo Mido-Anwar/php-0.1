@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
         }
     } else {
 
-        $error_message = "please fill all filds ";
+            $error_message = "please fill all filds";
     }
 
     require BL . 'function/messages.php';
