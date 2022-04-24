@@ -5,11 +5,7 @@ require_once(BLA.'inc/header.php');
 
 
 
-<?php
-         
 
-
-?>
 
 
 

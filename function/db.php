@@ -25,7 +25,7 @@ function db_insert($sql)
     }
     return false;
 }
-// get reows from database
+// get rows from database
 
 function getrow($table, $field, $value)
 {
@@ -45,6 +45,60 @@ function getrow($table, $field, $value)
 
         return $rows[0];
     }
+
+    return false;
+}
+
+//fetch data to veiw in all indexes
+
+function getrows($table)
+
+{
+    global $conn;
+
+    $sql = "SELECT * FROM `$table`";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+
+        $rows = [];
+
+        if (mysqli_num_rows($result) > 0) {
+
+            while ($row = mysqli_fetch_assoc($result)) {
+
+                $rows[] = $row;
+            }
+        }
+    }
+    return $rows;
+}
+
+function db_update($sql)
+{
+    global $conn;
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+
+        return 'update success';
+    }
+    return false;
+}
+
+function deleterow($sql)
+{
+
+    global $conn;
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+
+        return "deleted success";
+    }
+
 
     return false;
 }

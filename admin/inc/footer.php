@@ -1,3 +1,4 @@
+
 </div>
     </div>
 
@@ -12,25 +13,25 @@
         $(".delete").click(function()
         {
 
-          var item_id = $(this).attr("data-id");
-          var table = $(this).attr("data-table");
-          var field = $(this).attr("data-field");
+          var item_id = $(this).attr("data-id");//[city_id]
+          var table = $(this).attr("data-table");//cites
+          var field = $(this).attr("data-field"); //city_id
 
             $.ajax({
               type:"GET",
-              url:"<?php echo BUA.'inc/delete.php'; ?>",
+              url:"<?php  echo BLA . 'cities/delete.php'?>",
               data:{item_id:item_id,table:table,field:field},
               dataType:"JSON",
               success:function(data)
               {
-                  // console.log(data.message);
+                   console.log(data.message);
                   if(data.message == "success")
                   {
                     alert("Deleted Success");
                   }
                   else 
                   {
-                    // alert("Error");
+                     alert("Error");
                   }
                   
               }

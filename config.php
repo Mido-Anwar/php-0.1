@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 define("BU","http://localhost/work/php-0.1/");
